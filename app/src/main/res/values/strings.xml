@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">InLocker</string>
+    <string name="yoku_beni_maru">Yoku Beni Maru</string>
+    <string name="_7_11">7/11</string>
+    <string name="family_mart">Family Mart</string>
+    <string name="tsuruga_drug_store">Tsuruga Drug Store</string>
+    <string name="lion_dor">Lion\'Dor</string>
+    <string name="lawson">Lawson</string>
+    <string name="please_choose_category">Please choose category</string>
+    <string name="cateliary">cateliary</string>
+    <string name="toiletries">Toiletries</string>
+    <string name="drugs">Drugs</string>
+    <string name="food">food</string>
+    <string name="children_toys">Children toys</string>
+    <string name="clothes">Clothes</string>
+</resources>
