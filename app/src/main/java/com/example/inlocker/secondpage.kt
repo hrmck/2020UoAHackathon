@@ -7,13 +7,13 @@ import kotlinx.android.synthetic.main.secondpage.*
 
 class secondpage : AppCompatActivity() {
 
-        override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.secondpage)
         FoodBtn.setOnClickListener {
 
-        startActivity(Intent(this, page3a::class.java))
+            startActivity(Intent(this, products::class.java))
         }
 
-        }
-        }
+    }
+}
