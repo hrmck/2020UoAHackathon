@@ -13,4 +13,21 @@
     <string name="food">food</string>
     <string name="children_toys">Children toys</string>
     <string name="clothes">Clothes</string>
+
+    <!-- more organized way -->
+    <string-array name="goods_demo">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+        <item>Item 5</item>
+    </string-array>
+
+    <string-array name="categories">
+        <item>Fruits</item>
+        <item>Veggies</item>
+        <item>Drugs</item>
+        <item>Drinks</item>
+        <item>Hair</item>
+    </string-array>
 </resources>
