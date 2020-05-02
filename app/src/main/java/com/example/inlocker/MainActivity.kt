@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         LawsonBtn.setOnClickListener {
 
-            startActivity(Intent(this, secondpage::class.java))
+            startActivity(Intent(this, stores::class.java))
 
         }
 

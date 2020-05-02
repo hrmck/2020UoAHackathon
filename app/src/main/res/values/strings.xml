@@ -4,7 +4,7 @@
     <string name="_7_11">7/11</string>
     <string name="family_mart">Family Mart</string>
     <string name="tsuruga_drug_store">Tsuruga Drug Store</string>
-    <string name="lion_dor">Lion\'Dor</string>
+    <string name="lion_dor">Lion D\'or</string>
     <string name="lawson">Lawson</string>
     <string name="please_choose_category">Please choose category</string>
     <string name="cateliary">cateliary</string>
@@ -29,5 +29,24 @@
         <item>Drugs</item>
         <item>Drinks</item>
         <item>Hair</item>
+    </string-array>
+    <!--
+    <string-array name="stores">
+        <item>ヨークベニマル</item>
+        <item>7-eleven</item>
+        <item>ファミリーマート</item>
+        <item>ツルハドラッグ</item>
+        <item>Lion D\'or</item>
+        <item>ローソン</item>
+    </string-array>
+    -->
+
+    <string-array name="stores">
+        <item>@string/family_mart</item>
+        <item>@string/_7_11</item>
+        <item>@string/yoku_beni_maru</item>
+        <item>@string/tsuruga_drug_store</item>
+        <item>@string/lion_dor</item>
+        <item>@string/lawson</item>
     </string-array>
 </resources>
