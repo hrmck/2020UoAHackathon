@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ProductActivity extends AppCompatActivity {
 
     TextView storeName;
+    String[] categories;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -18,5 +19,8 @@ public class ProductActivity extends AppCompatActivity {
         storeName = findViewById(R.id.store_name);
         String received_storeName = getIntent().getStringExtra("chosenStoreName");
         storeName.setText(received_storeName);
+
+        categories = getResources().getStringArray(R.array.categories);
+
     }
 }
