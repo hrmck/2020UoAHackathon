@@ -4,85 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/red"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="91dp"
-        android:layout_height="80dp"
-        android:text="Lion'Dor"
+        android:id="@+id/LoginBtn"
+        android:layout_width="103dp"
+        android:layout_height="53dp"
+        android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.211"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
+        app:layout_constraintVertical_bias="0.533" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="136dp"
-        android:layout_height="81dp"
-        android:text="@string/yoku_beni_maru"
+        android:layout_width="103dp"
+        android:layout_height="53dp"
+        android:text="Sign up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="134dp"
-        android:layout_height="74dp"
-        android:text="@string/_7_11"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353" />
+        app:layout_constraintVertical_bias="0.533" />
 
-    <Button
-        android:id="@+id/LawsonBtn"
-        android:layout_width="83dp"
-        android:layout_height="77dp"
-        android:text="@string/lawson"
+    <EditText
+        android:id="@+id/UsernameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.279" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="135dp"
-        android:layout_height="71dp"
-        android:text="@string/family_mart"
+    <EditText
+        android:id="@+id/PasswordEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="131dp"
-        android:layout_height="82dp"
-        android:text="@string/tsuruga_drug_store"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.556" />
+        app:layout_constraintVertical_bias="0.386" />
 
     <TextView
-        android:id="@+id/textView"
-        style="@style/Widget.AppCompat.TextView.SpinnerItem"
-        android:layout_width="243dp"
-        android:layout_height="66dp"
-        android:autoText="false"
-        android:focusable="auto"
-        android:text="          SHOPS"
-        android:textSize="30sp"
+        android:id="@+id/ForgotPasswordTextView"
+        android:layout_width="132dp"
+        android:layout_height="24dp"
+        android:background="@color/red"
+        android:text="forgot password?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.633" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
