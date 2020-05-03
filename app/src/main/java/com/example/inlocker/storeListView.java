@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /*
-As I have a layout for the list items, this class is to receive values from stores.java,
+As I have a layout for the list items, this class is to receive values from activity_stores.java,
 display the values using the layout store_list_layout.xml
  */
 

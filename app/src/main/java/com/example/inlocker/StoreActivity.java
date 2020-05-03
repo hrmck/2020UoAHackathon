@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class stores extends AppCompatActivity {
+public class StoreActivity extends AppCompatActivity {
     ListView store_list;
     String[] storeName;
     Integer[] imgID = {R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo};
@@ -18,7 +18,7 @@ public class stores extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.stores);
+        setContentView(R.layout.activity_stores);
         storeName = getResources().getStringArray(R.array.stores);  //this has to be put inside onCreate or else .getResources() cannot work
 
         store_list = findViewById(R.id.store_list);
@@ -28,7 +28,7 @@ public class stores extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String chosen_storeName = storeName[position];
-                Intent intent = new Intent(stores.this, products.class);
+                Intent intent = new Intent(StoreActivity.this, ProductActivity.class);
                 intent.putExtra("chosenStoreName", chosen_storeName);
                 startActivity(intent);
             }
