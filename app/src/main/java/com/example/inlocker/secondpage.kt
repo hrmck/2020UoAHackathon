@@ -12,7 +12,7 @@ class secondpage : AppCompatActivity() {
         setContentView(R.layout.secondpage)
         FoodBtn.setOnClickListener {
 
-            startActivity(Intent(this, products::class.java))
+            startActivity(Intent(this, ProductActivity::class.java))
         }
 
     }
