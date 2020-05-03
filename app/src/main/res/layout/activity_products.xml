@@ -76,7 +76,7 @@
                 android:layout_below="@id/store_details">
 
                 <TabHost
-                    android:id="@+id/category"
+                    android:id="@+id/categoryTab"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent">
 
