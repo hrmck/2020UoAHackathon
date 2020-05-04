@@ -11,8 +11,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class storeListView extends ArrayAdapter<String> {
+/*
+As I have a layout for the list items, this class is to receive values from activity_stores.java,
+display the values using the layout store_list_layout.xml
+ */
 
+public class storeListView extends ArrayAdapter<String> {
 
     private String[] storeName;
     private Integer[] imgID;

@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".secondpage" />
-        <activity android:name=".products" />
-        <activity android:name=".stores" />
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".StoreActivity" />
     </application>
 
 </manifest>
