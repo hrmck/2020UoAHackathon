@@ -57,4 +57,9 @@
     <string name="signUp">Sign Up</string>
     <string name="login">Login</string>
     <string name="forgetPwd">forgot password?</string>
+
+    <string name="title_cart">Cart</string>
+    <string name="proceed_to_payment">Proceed to payment</string>
+
+    <string name="title_productInfo">Details</string>
 </resources>

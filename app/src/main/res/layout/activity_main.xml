@@ -4,18 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
     tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/UsernameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="200dp"
+        android:hint="@string/userID"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/PasswordEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="50dp"
+        android:hint="@string/pwd"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/UsernameEditText"
+        app:layout_constraintTop_toBottomOf="@+id/UsernameEditText" />
+
+    <TextView
+        android:id="@+id/ForgotPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/red"
+        android:paddingLeft="15dp"
+        android:text="@string/forgetPwd"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/PasswordEditText"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordEditText" />
 
     <Button
         android:id="@+id/LoginBtn"
         android:layout_width="105dp"
         android:layout_height="35dp"
         android:layout_marginTop="35dp"
-        android:background="@drawable/layout_rounded_buttons"
-        android:backgroundTint="@color/bone"
         android:text="@string/login"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/SignUpBtn"
         app:layout_constraintHorizontal_bias="0.5"
@@ -27,53 +58,10 @@
         android:id="@+id/SignUpBtn"
         android:layout_width="105dp"
         android:layout_height="35dp"
-        android:background="@drawable/layout_rounded_buttons"
-        android:backgroundTint="@color/bone"
         android:text="@string/signUp"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/LoginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/LoginBtn" />
-
-    <EditText
-        android:id="@+id/UsernameEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/layout_rounded_edittext"
-        android:ems="15"
-        android:hint="@string/userID"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/PasswordEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/layout_rounded_edittext"
-        android:ems="15"
-        android:hint="@string/pwd"
-        android:inputType="textPassword"
-        android:paddingStart="15dp"
-        app:layout_constraintStart_toStartOf="@+id/UsernameEditText"
-        app:layout_constraintTop_toBottomOf="@+id/UsernameEditText" />
-
-    <TextView
-        android:id="@+id/ForgotPasswordTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="25dp"
-        android:background="@color/red"
-        android:text="@string/forgetPwd"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/PasswordEditText"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
