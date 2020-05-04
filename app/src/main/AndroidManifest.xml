@@ -16,7 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".secondpage" />
         <activity android:name=".ProductActivity" />
         <activity android:name=".StoreActivity" />
     </application>
