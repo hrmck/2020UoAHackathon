@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageButton
+            android:id="@+id/personal_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:adjustViewBounds="true"
+            android:background="#00FFFFFF"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/personal_info" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_bar"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/store"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/cart">
+
+            <RelativeLayout
+                android:id="@+id/store_details"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/store_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/store_demo" />
+
+                <TextView
+                    android:id="@+id/store_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/store_image"
+                    android:text="store name here"
+                    android:textColor="#A53F3F"
+                    android:textSize="22sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/goods"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/store_details">
+
+                <TabHost
+                    android:id="@+id/categoryTab"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.2">
+
+                            <TabWidget
+                                android:id="@android:id/tabs"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:orientation="vertical">
+
+                                <Button
+                                    android:id="@+id/fruits"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="0dip"
+                                    android:layout_weight="1.0"
+                                    android:onClick="tabHandler" />
+
+                                <Button
+                                    android:id="@+id/veggies"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="0dip"
+                                    android:layout_weight="1.0"
+                                    android:onClick="tabHandler" />
+
+                                <Button
+                                    android:id="@+id/drugs"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="0dip"
+                                    android:layout_weight="1.0"
+                                    android:onClick="tabHandler" />
+
+                                <Button
+                                    android:id="@+id/drinks"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="0dip"
+                                    android:layout_weight="1.0"
+                                    android:onClick="tabHandler" />
+
+                                <Button
+                                    android:id="@+id/hair"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="0dip"
+                                    android:layout_weight="1.0"
+                                    android:onClick="tabHandler" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@android:id/tabcontent"
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.8">
+
+                            <ListView
+                                android:id="@+id/goods_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </TabHost>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/cart"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <ImageButton
+                android:id="@+id/proceed_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/cart" />
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/proceed_cart"
+                android:background="@color/red"
+                android:gravity="center"
+                android:text="show total price"
+                android:textAlignment="center"
+                android:textColor="#FFFCFC"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
