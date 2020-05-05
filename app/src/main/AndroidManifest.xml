@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".ProductActivity" />
         <activity android:name=".StoreActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".CartActivity" />
     </application>
 
 </manifest>
