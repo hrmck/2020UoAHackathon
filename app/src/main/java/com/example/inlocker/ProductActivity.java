@@ -26,7 +26,7 @@ public class ProductActivity extends AppCompatActivity {
 
         //categories = getResources().getStringArray(R.array.categories);
 
-        cart = (ImageButton) findViewById(R.id.cartBtn);
+        cart = findViewById(R.id.cartBtn);
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
