@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ public class StoreActivity extends AppCompatActivity {
     String[] storeName;
     Integer[] imgID = {R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo};
 
+    SearchView search_bar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,14 @@ public class StoreActivity extends AppCompatActivity {
                 Intent intent = new Intent(StoreActivity.this, ProductActivity.class);
                 intent.putExtra("chosenStoreName", chosen_storeName);
                 startActivity(intent);
+            }
+        });
+
+        search_bar = findViewById(R.id.store_searchView);
+        search_bar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                search_bar.onActionViewExpanded();
             }
         });
     }
