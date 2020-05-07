@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/upper_guideline"
+            android:id="@+id/mini_upper_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -42,8 +42,8 @@
 
         <EditText
             android:id="@+id/signUp_userID"
+            style="@style/customEditText"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
             android:layout_marginTop="4dp"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,8 +64,8 @@
 
         <EditText
             android:id="@+id/signUp_emailAdr"
+            style="@style/customEditText"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
             android:layout_marginTop="4dp"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
@@ -87,8 +87,8 @@
 
         <EditText
             android:id="@+id/signUp_pwd"
+            style="@style/customEditText"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
             android:layout_marginTop="4dp"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,8 +109,8 @@
 
         <EditText
             android:id="@+id/signUp_pwd_c"
+            style="@style/customEditText"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
             android:layout_marginTop="4dp"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
