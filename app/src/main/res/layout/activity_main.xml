@@ -6,62 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/UsernameEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginTop="200dp"
-        android:hint="@string/userID"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/PasswordEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginTop="50dp"
-        android:hint="@string/pwd"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/UsernameEditText"
-        app:layout_constraintTop_toBottomOf="@+id/UsernameEditText" />
-
-    <TextView
-        android:id="@+id/ForgotPasswordTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="25dp"
-        android:background="@color/red"
-        android:paddingLeft="15dp"
-        android:text="@string/forgetPwd"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/PasswordEditText"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordEditText" />
-
     <Button
-        android:id="@+id/LoginBtn"
-        android:layout_width="105dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="35dp"
+        android:id="@+id/LoginBtn_main"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/SignUpBtn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ForgotPasswordTextView"
-        app:layout_constraintVertical_bias="0.050" />
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <Button
-        android:id="@+id/SignUpBtn"
-        android:layout_width="105dp"
-        android:layout_height="35dp"
+        android:id="@+id/SignUpBtn_main"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
         android:text="@string/signUp"
-        app:layout_constraintBottom_toBottomOf="@+id/LoginBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/LoginBtn" />
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/LoginBtn_main" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
