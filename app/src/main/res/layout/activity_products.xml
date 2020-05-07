@@ -164,7 +164,7 @@
         android:layout_height="75dp"
         android:background="@color/bone"
         android:scaleType="fitCenter"
-        android:src="@drawable/cart"
+        app:srcCompat="@drawable/cart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

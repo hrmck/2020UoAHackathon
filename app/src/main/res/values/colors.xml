@@ -3,5 +3,8 @@
     <color name="red">#A53F3F</color>
     <color name="white">#FFFCFC</color>
     <color name="bone">#DDCBCB</color>
-    <color name="black">#050505</color>
+    <!--<color name="black">#050505</color>-->
+    <color name="black">#000000</color>
+    <color name="blue">#1B2A41</color>
+    <color name="brown">#af9164</color>
 </resources>
