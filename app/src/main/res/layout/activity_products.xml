@@ -81,7 +81,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ToggleButton
-                    android:id="@+id/toggleButton6"
+                    android:id="@+id/DrinksBtn"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginTop="1dp"
@@ -103,7 +103,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/toggleButton6" />
+                    app:layout_constraintTop_toBottomOf="@+id/DrinksBtn" />
 
                 <ToggleButton
                     android:id="@+id/toggleButton9"
@@ -153,6 +153,56 @@
                 app:layout_constraintStart_toEndOf="@+id/category_btnArray"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:itemCount="25" />
+
+            <TextView
+                android:id="@+id/a"
+                android:layout_width="189dp"
+                android:layout_height="43dp"
+                android:text="TextView"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.126" />
+
+            <TextView
+                android:id="@+id/b"
+                android:layout_width="195dp"
+                android:layout_height="50dp"
+                android:text="TextView"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/a"
+                app:layout_constraintVertical_bias="0.17" />
+
+            <TextView
+                android:id="@+id/c"
+                android:layout_width="198dp"
+                android:layout_height="52dp"
+                android:text="TextView"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.545"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/b"
+                app:layout_constraintVertical_bias="0.237" />
+
+            <TextView
+                android:id="@+id/d"
+                android:layout_width="190dp"
+                android:layout_height="42dp"
+                android:text="TextView"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c"
+                app:layout_constraintVertical_bias="0.333" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
