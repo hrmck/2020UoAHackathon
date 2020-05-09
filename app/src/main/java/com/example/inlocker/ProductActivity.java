@@ -47,12 +47,12 @@ public class ProductActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
-
         storeName = findViewById(R.id.storeName);
+        cart = findViewById(R.id.cartBtn);
+        categories = getResources().getStringArray(R.array.categories);
+
         String received_storeName = getIntent().getStringExtra("chosenStoreName");
         storeName.setText(received_storeName);
-
-        //categories = getResources().getStringArray(R.array.categories);
 
         //I have started attempting to retrieve the data from the firebase
         goods_list = (RecyclerView) findViewById(R.id.productListView);
@@ -115,7 +115,6 @@ public class ProductActivity extends AppCompatActivity {
         });
 
 //my editing ends here
-        cart = (ImageButton) findViewById(R.id.cartBtn);
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

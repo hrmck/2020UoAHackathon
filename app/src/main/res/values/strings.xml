@@ -62,4 +62,11 @@
     <string name="proceed_to_payment">Proceed to payment</string>
 
     <string name="title_productInfo">Details</string>
+    <string name="search">Search</string>
+
+    <string name="checkCart">Check Cart</string>
+    <string name="addToCart">Add to Cart</string>
+    <string name="introduction">Introduction</string>
+    <string name="amount">Amount</string>
+    <string name="totalPrice">Total Price</string>
 </resources>
