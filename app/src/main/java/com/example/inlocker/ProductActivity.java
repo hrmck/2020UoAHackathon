@@ -2,31 +2,22 @@ package com.example.inlocker;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+/*
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import org.w3c.dom.Text;
+ */
 
 public class ProductActivity extends AppCompatActivity {
 
@@ -35,12 +26,13 @@ public class ProductActivity extends AppCompatActivity {
     ImageButton cart;
     //My editing begins here.
     RecyclerView goods_list;
-    DatabaseReference reff;
+    //DatabaseReference reff;
     ToggleButton DrinksBtn;
     TextView a;
     TextView b;
     TextView c;
     TextView d;
+
 
 
     @Override
@@ -55,11 +47,11 @@ public class ProductActivity extends AppCompatActivity {
         storeName.setText(received_storeName);
 
         //I have started attempting to retrieve the data from the firebase
-        goods_list = (RecyclerView) findViewById(R.id.productListView);
+        goods_list = findViewById(R.id.productListView);
         DrinksBtn = (ToggleButton) findViewById(R.id.DrinksBtn);
-        a = (TextView) findViewById(R.id.a);
-        b = (TextView) findViewById(R.id.b);
-        c = (TextView) findViewById(R.id.c);
+        //a = (TextView) findViewById(R.id.toggleButton7);
+        //b = (TextView) findViewById(R.id.toggleButton8);
+        //c = (TextView) findViewById(R.id.toggleButton9);
 
         /*DrinksBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,9 +80,10 @@ public class ProductActivity extends AppCompatActivity {
             }
         });
 */
-
+/*
         //for using firestore
         DrinksBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
@@ -113,7 +106,7 @@ public class ProductActivity extends AppCompatActivity {
                         });
             }
         });
-
+*/
 //my editing ends here
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
