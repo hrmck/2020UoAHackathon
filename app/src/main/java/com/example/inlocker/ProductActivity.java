@@ -19,14 +19,13 @@ public class ProductActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
-
         storeName = findViewById(R.id.storeName);
+        cart = findViewById(R.id.cartBtn);
+        categories = getResources().getStringArray(R.array.categories);
+
         String received_storeName = getIntent().getStringExtra("chosenStoreName");
         storeName.setText(received_storeName);
 
-        //categories = getResources().getStringArray(R.array.categories);
-
-        cart = findViewById(R.id.cartBtn);
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
