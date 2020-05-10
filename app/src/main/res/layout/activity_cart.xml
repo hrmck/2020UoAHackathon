@@ -13,6 +13,7 @@
         android:text="@string/title_cart"
         android:textColor="@color/bone"
         android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal1_cart_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,10 +33,61 @@
         android:id="@+id/toPaymentBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
         android:text="@string/proceed_to_payment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontal2_cart_guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal1_cart_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal2_cart_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical1_cart_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical2_cart_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/layout_rounded_edittext"
+        android:backgroundTint="@color/bone"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal2_cart_guideline"
+        app:layout_constraintEnd_toStartOf="@+id/vertical2_cart_guideline"
+        app:layout_constraintStart_toStartOf="@+id/vertical1_cart_guideline"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1_cart_guideline"
+        tools:itemCount="0" />
+
+    <TextView
+        android:id="@+id/cartDemo_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cartItemDemo"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal2_cart_guideline"
+        app:layout_constraintEnd_toStartOf="@+id/vertical2_cart_guideline"
+        app:layout_constraintStart_toStartOf="@+id/vertical1_cart_guideline"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1_cart_guideline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
