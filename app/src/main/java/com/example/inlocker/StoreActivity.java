@@ -18,10 +18,6 @@ import com.google.firebase.firestore.Query;
 
 
 public class StoreActivity extends AppCompatActivity {
-    //ListView store_list;
-    //String[] storeName;
-    //Integer[] imgID = {R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo};
-
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference storeListRef = db.collection("storeList");
 
@@ -32,23 +28,6 @@ public class StoreActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stores);
-        /*
-        storeName = getResources().getStringArray(R.array.stores);  //this has to be put inside onCreate or else .getResources() cannot work
-
-        store_list = findViewById(R.id.store_list);
-        storeListView storeList = new storeListView(this, storeName, imgID);
-        store_list.setAdapter(storeList);
-        store_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String chosen_storeName = storeName[position];
-                Intent intent = new Intent(StoreActivity.this, ProductActivity.class);
-                intent.putExtra("chosenStoreName", chosen_storeName);
-                startActivity(intent);
-            }
-        });
-
-         */
 
         setUpRecyclerView();
 
@@ -78,9 +57,11 @@ public class StoreActivity extends AppCompatActivity {
             @Override
             public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
                 StoreListItem itemClick = documentSnapshot.toObject(StoreListItem.class);
+                String storeID = documentSnapshot.getId();
                 String chosenStoreName = itemClick.getName();
                 Intent intent = new Intent(StoreActivity.this, ProductActivity.class);
                 intent.putExtra("chosenStoreName", chosenStoreName);
+                intent.putExtra("documentID", storeID);
                 startActivity(intent);
             }
         });
@@ -98,3 +79,26 @@ public class StoreActivity extends AppCompatActivity {
         adapter.stopListening();
     }
 }
+
+//ListView store_list;
+//String[] storeName;
+//Integer[] imgID = {R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo, R.drawable.store_demo};
+
+        /*
+        storeName = getResources().getStringArray(R.array.stores);  //this has to be put inside onCreate or else .getResources() cannot work
+
+        store_list = findViewById(R.id.store_list);
+        storeListView storeList = new storeListView(this, storeName, imgID);
+        store_list.setAdapter(storeList);
+        store_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String chosen_storeName = storeName[position];
+                Intent intent = new Intent(StoreActivity.this, ProductActivity.class);
+                intent.putExtra("chosenStoreName", chosen_storeName);
+                startActivity(intent);
+            }
+        });
+
+         */
+
