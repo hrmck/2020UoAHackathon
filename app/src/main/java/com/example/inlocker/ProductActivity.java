@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
@@ -25,6 +26,7 @@ public class ProductActivity extends AppCompatActivity {
     TextView storeName;
     String[] categories;
     ImageButton cart;
+    String storeDocumentID;
 
     private static final String TAG = "ProductActivity";
 
@@ -39,8 +41,8 @@ public class ProductActivity extends AppCompatActivity {
         String received_storeName = getIntent().getStringExtra("chosenStoreName");
         storeName.setText(received_storeName);
 
-        String documentID = getIntent().getStringExtra("documentID");
-        productListRef = db.collection("storeList").document(documentID).collection("Products");
+        storeDocumentID = getIntent().getStringExtra("documentID");
+        productListRef = db.collection("storeList").document(storeDocumentID).collection("Products");
 
         setUpRecyclerView();
 
@@ -64,6 +66,16 @@ public class ProductActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new ProductListItemAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+                Intent intent = new Intent(getApplicationContext(), ProductInfoActivity.class);
+                intent.putExtra("productItemDocumentID", documentSnapshot.getId());
+                intent.putExtra("storeDocumentID", storeDocumentID);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

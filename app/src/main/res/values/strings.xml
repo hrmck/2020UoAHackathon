@@ -69,4 +69,24 @@
     <string name="introduction">Introduction</string>
     <string name="amount">Amount</string>
     <string name="totalPrice">Total Price</string>
+
+    <string name="calculate">Calculate</string>
+    <string name="cartItemDemo">Cart items go here</string>
+
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="paymentType">Way of Payment</string>
+    <string name="remarks">Remarks (if any)</string>
+
+    <string-array name="paymentType">
+        <item>---Please choose payment type---</item>
+        <item>XXXPay</item>
+        <item>YYYPay</item>
+        <item>ZZZPay</item>
+    </string-array>
+
+    <string name="confirm">Confirm</string>
+
+    <string name="thankYou">Thank you very much!\nPlease take a screenshot to save the QR code for opening the locker.</string>
+    <string name="continueShopping">Continue Shopping</string>
 </resources>

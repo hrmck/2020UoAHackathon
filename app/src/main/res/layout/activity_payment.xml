@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity">
+
+    <EditText
+        android:id="@+id/date_confirm_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/date"
+        android:inputType="date"
+        app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1_confirm_guideline" />
+
+    <EditText
+        android:id="@+id/time_confirm_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/time"
+        android:inputType="time"
+        app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/date_confirm_editText" />
+
+    <Spinner
+        android:id="@+id/paymentType_confirm_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/time_confirm_editText" />
+
+    <EditText
+        android:id="@+id/remarks_confirm_editText"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/remarks"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/paymentType_confirm_spinner" />
+
+    <Button
+        android:id="@+id/confirm_confirmBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remarks_confirm_editText" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal1_confirm_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical1_confirm_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical2_confrim_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
