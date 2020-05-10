@@ -2,34 +2,30 @@ package com.example.inlocker;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+
 
 public class ProductActivity extends AppCompatActivity {
+
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private CollectionReference productListRef;
+    private ProductListItemAdapter adapter;
 
     TextView storeName;
     String[] categories;
     ImageButton cart;
-    //My editing begins here.
-    RecyclerView goods_list;
-    //DatabaseReference reff;
-    ToggleButton DrinksBtn;
-    TextView a;
+
     private static final String TAG = "ProductActivity";
 
     @Override
@@ -43,8 +39,54 @@ public class ProductActivity extends AppCompatActivity {
         String received_storeName = getIntent().getStringExtra("chosenStoreName");
         storeName.setText(received_storeName);
 
-        //I have started attempting to retrieve the data from the firebase
-        //goods_list = (RecyclerView) findViewById(R.id.productListView);
+        String documentID = getIntent().getStringExtra("documentID");
+        productListRef = db.collection("storeList").document(documentID).collection("Products");
+
+        setUpRecyclerView();
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setUpRecyclerView() {
+        FirestoreRecyclerOptions<ProductListItem> options = new FirestoreRecyclerOptions.Builder<ProductListItem>()
+                .setQuery(productListRef, ProductListItem.class)
+                .build();
+
+        adapter = new ProductListItemAdapter(options);
+
+        RecyclerView recyclerView = findViewById(R.id.productList_recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
+}
+
+//I have started attempting to retrieve the data from the firebase
+//My editing begins here.
+//RecyclerView goods_list;
+// DatabaseReference reff;
+//    ToggleButton DrinksBtn;
+//    TextView a;
+//goods_list = (RecyclerView) findViewById(R.id.productListView);
+        /*
         DrinksBtn = (ToggleButton) findViewById(R.id.DrinksBtn);
         a = (TextView) findViewById(R.id.a);
 
@@ -71,19 +113,8 @@ public class ProductActivity extends AppCompatActivity {
                         });
             }
         });
-
-
+         */
 //my editing ends here
-        cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProductActivity.this, CartActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-}
-
 
 //This chunck works
 /*FirebaseFirestore db = FirebaseFirestore.getInstance();
