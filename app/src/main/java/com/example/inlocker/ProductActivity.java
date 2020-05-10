@@ -42,9 +42,6 @@ public class ProductActivity extends AppCompatActivity {
     DatabaseReference reff;
     ToggleButton DrinksBtn;
     TextView a;
-    TextView b;
-    TextView c;
-    TextView d;
     private static final String TAG = "ProductActivity";
 
     @Override
