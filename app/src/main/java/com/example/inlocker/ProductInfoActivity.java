@@ -18,14 +18,25 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.lang.String;
+
 public class ProductInfoActivity extends AppCompatActivity implements View.OnClickListener {
     Button addToCart, toCart, calculateTotal;
-    TextView textViewName, textViewPrice, textViewRemainAmount;
+    TextView textViewName;
+    TextView textViewPrice;
+    TextView textViewRemainAmount;
     TextView textViewTotalPrice;
     EditText editTextInputAmount;
     int price;
+    String remainAmount;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private DocumentReference documentReference;
+    public static String cartProdName;
+    public int cartProdAmount;
+    public int cartProdPrice;
+    public static String placeHolder1;
+    public static String placeHolder2;
+
 
 
     @Override
@@ -66,18 +77,27 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.check_cartBtn:
                 Intent toCart = new Intent(ProductInfoActivity.this, CartActivity.class);
+                toCart.putExtra(cartProdName, cartProdName);
+                placeHolder2 = String.valueOf(cartProdAmount);
+                toCart.putExtra(placeHolder2, String.valueOf(cartProdAmount));
+                toCart.putExtra(placeHolder1, cartProdPrice);
                 startActivity(toCart);
                 break;
             case R.id.add_to_cartBtn:
                 //add to cart
+
                 break;
         }
     }
 
     private void calculateNewTotal() {
         int newAmount = Integer.parseInt(editTextInputAmount.getText().toString());
+        cartProdAmount = newAmount;
         int newTotal = newAmount * price;
+        cartProdPrice = newTotal;
         textViewTotalPrice.setText(String.valueOf(newTotal));
+
+
     }
 
     private void fetchProductInfo() {
@@ -87,13 +107,16 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
                 Toast.makeText(getApplicationContext(),
                         "Product info loaded successfully", Toast.LENGTH_SHORT).show();
                 textViewName.setText(documentSnapshot.getString("Name"));
+                cartProdName = String.valueOf(documentSnapshot.get("Name"));
+
+
 
                 Long priceGet = (Long) documentSnapshot.get("Price");
                 price = priceGet.intValue();
 
                 String price = String.valueOf(documentSnapshot.get("Price")) + " each";
                 textViewPrice.setText(price);
-                String remainAmount = String.valueOf(documentSnapshot.get("Amount")) + " remaining";
+                remainAmount = String.valueOf(documentSnapshot.get("Amount")) + " remaining";
                 textViewRemainAmount.setText(remainAmount);
             }
         }).addOnFailureListener(new OnFailureListener() {
