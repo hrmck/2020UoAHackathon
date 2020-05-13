@@ -12,6 +12,7 @@
         <item name="buttonStyle">@style/PrimaryButton</item>
         <item name="editTextStyle">@style/customEditText</item>
         <item name="searchViewStyle">@style/customSearchView</item>
+        <item name="progressBarStyle">@style/customProgressBar</item>
         <!--setting the name to android:editTextStyle doesn't work haha idk why -->
 
         <!--<item name="android:imageButtonStyle">android:borderlessButtonStyle</item>-->
@@ -47,5 +48,12 @@
         <item name="queryHint">@string/search</item>
         <item name="android:searchIcon">@drawable/search_icon</item>
         <item name="android:background">@drawable/layout_rounded_edittext</item>
+    </style>
+
+    <style name="customProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:indeterminateTint">@color/white</item>
+        <item name="android:visibility">gone</item>
     </style>
 </resources>

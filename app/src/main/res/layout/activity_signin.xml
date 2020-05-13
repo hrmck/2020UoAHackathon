@@ -23,6 +23,15 @@
         app:layout_constraintTop_toBottomOf="@id/upper_s_guideline"
         app:layout_constraintVertical_bias="0.0">
 
+        <ProgressBar
+            android:id="@+id/signUp_progressBar"
+            style="@style/customProgressBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.40" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/mini_upper_guideline"
             android:layout_width="wrap_content"
@@ -31,36 +40,14 @@
             app:layout_constraintGuide_percent="0.1" />
 
         <TextView
-            android:id="@+id/uid_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/userID"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/signUp_userID"
-            app:layout_constraintTop_toTopOf="@+id/mini_upper_guideline" />
-
-        <EditText
-            android:id="@+id/signUp_userID"
-            style="@style/customEditText"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="4dp"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/uid_textView" />
-
-        <TextView
             android:id="@+id/email_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/emailAdr"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/signUp_emailAdr"
-            app:layout_constraintTop_toBottomOf="@+id/signUp_userID" />
+            app:layout_constraintTop_toTopOf="@+id/mini_upper_guideline" />
 
         <EditText
             android:id="@+id/signUp_emailAdr"
