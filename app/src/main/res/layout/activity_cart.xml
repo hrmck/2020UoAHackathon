@@ -80,14 +80,42 @@
         tools:itemCount="0" />
 
     <TextView
-        android:id="@+id/cartDemo_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cartItemDemo"
+        android:id="@+id/cartProductName"
+        android:layout_width="232dp"
+        android:layout_height="53dp"
+        android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/horizontal2_cart_guideline"
-        app:layout_constraintEnd_toStartOf="@+id/vertical2_cart_guideline"
-        app:layout_constraintStart_toStartOf="@+id/vertical1_cart_guideline"
-        app:layout_constraintTop_toTopOf="@+id/horizontal1_cart_guideline" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
+
+    <TextView
+        android:id="@+id/cartProductAmount"
+        android:layout_width="170dp"
+        android:layout_height="27dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal2_cart_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
+
+    <TextView
+        android:id="@+id/cartProductTotal"
+        android:layout_width="170dp"
+        android:layout_height="27dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
