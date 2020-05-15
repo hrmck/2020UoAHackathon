@@ -24,7 +24,7 @@
         <activity android:name=".ProductActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".ProductInfoActivity" />
-        <activity android:name=".shopperDetails" />
+        <activity android:name=".shopperinfo" />
 
     </application>
 
