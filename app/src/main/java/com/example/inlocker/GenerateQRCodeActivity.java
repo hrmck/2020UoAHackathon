@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class generateQRCodeActivity extends AppCompatActivity implements View.OnClickListener {
+public class GenerateQRCodeActivity extends AppCompatActivity implements View.OnClickListener {
     Button toMain;
 
     @Override

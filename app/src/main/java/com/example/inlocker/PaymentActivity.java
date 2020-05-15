@@ -30,7 +30,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.confirm_confirmBtn) {
-            Intent intent = new Intent(getApplicationContext(), generateQRCodeActivity.class);
+            Intent intent = new Intent(getApplicationContext(), GenerateQRCodeActivity.class);
             startActivity(intent);
         }
     }

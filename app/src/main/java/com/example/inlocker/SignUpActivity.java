@@ -31,7 +31,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
+        setContentView(R.layout.activity_signup);
         mAuth = FirebaseAuth.getInstance();
 
         editTextEmail = findViewById(R.id.signUp_emailAdr);
