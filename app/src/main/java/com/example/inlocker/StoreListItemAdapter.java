@@ -33,6 +33,10 @@ public class StoreListItemAdapter extends FirestoreRecyclerAdapter<StoreListItem
     @Override
     protected void onBindViewHolder(@NonNull StoreListItemHolder holder, int position, @NonNull StoreListItem model) {
         holder.textViewStoreName.setText(model.getName());
+        if (model.getLogoImageLink() == null) {
+            holder.imageViewStoreLogo.setImageResource(R.drawable.store_demo);
+            return;
+        }
         Picasso.get().load(model.getLogoImageLink()).into(holder.imageViewStoreLogo);
     }
 

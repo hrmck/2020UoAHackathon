@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.2" />
+            app:layout_constraintGuide_percent="0.25" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/vertical_middle_p_guideline"
@@ -96,76 +96,58 @@
             app:layout_constraintStart_toStartOf="@+id/vertical2_p_guideline"
             app:layout_constraintTop_toTopOf="@+id/middle_p_guideline" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/category_btnArray"
-            android:layout_width="75dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <Button
+            android:id="@+id/category1_productBtn"
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:text="Button"
+            app:layout_constraintEnd_toStartOf="@+id/vertical2_p_guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/middle_p_guideline">
+            app:layout_constraintTop_toTopOf="@+id/middle_p_guideline" />
 
-            <ToggleButton
-                android:id="@+id/DrinksBtn"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="1dp"
-                android:text="ToggleButton"
-                app:layout_constraintBottom_toTopOf="@+id/toggleButton7"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/category2_productBtn"
+            android:layout_width="0dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="2dp"
+            android:text="Button"
+            app:layout_constraintEnd_toStartOf="@+id/vertical2_p_guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category1_productBtn" />
 
-            <ToggleButton
-                android:id="@+id/toggleButton7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="1dp"
-                android:text="ToggleButton"
-                app:layout_constraintBottom_toTopOf="@+id/toggleButton8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/DrinksBtn" />
+        <Button
+            android:id="@+id/category3_productBtn"
+            android:layout_width="0dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="1dp"
+            android:text="Button"
+            app:layout_constraintEnd_toStartOf="@+id/vertical2_p_guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category2_productBtn" />
 
-            <ToggleButton
-                android:id="@+id/toggleButton9"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="1dp"
-                android:text="ToggleButton"
-                app:layout_constraintBottom_toTopOf="@+id/toggleButton10"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toggleButton8" />
+        <Button
+            android:id="@+id/category4_productBtn"
+            android:layout_width="0dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="1dp"
+            android:text="Button"
+            app:layout_constraintEnd_toStartOf="@+id/vertical2_p_guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category3_productBtn" />
 
-            <ToggleButton
-                android:id="@+id/toggleButton10"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="1dp"
-                android:text="ToggleButton"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toggleButton9" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="1dp"
-                android:text="ToggleButton"
-                app:layout_constraintBottom_toTopOf="@+id/toggleButton9"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toggleButton7" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/category5_productBtn"
+            android:layout_width="0dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="1dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/vertical2_p_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category4_productBtn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

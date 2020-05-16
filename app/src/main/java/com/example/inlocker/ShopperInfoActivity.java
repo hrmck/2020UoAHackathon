@@ -22,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class shopperinfo extends AppCompatActivity implements View.OnClickListener {
+public class ShopperInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private static String TAG;

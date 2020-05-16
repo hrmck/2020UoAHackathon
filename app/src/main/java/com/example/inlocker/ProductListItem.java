@@ -5,16 +5,18 @@ public class ProductListItem {
     private int Price;
     private int Amount;
     private String Category;
+    private String itemImageUrl;
 
     public ProductListItem() {
         //empty constructor needed
     }
 
-    public ProductListItem(String Name, int Price, int Amount, String Category) {
+    public ProductListItem(String Name, int Price, int Amount, String Category, String itemImageUrl) {
         this.Name = Name;
         this.Price = Price;
         this.Amount = Amount;
         this.Category = Category;
+        this.itemImageUrl = itemImageUrl;
     }
 
     public String getName() {
@@ -31,5 +33,9 @@ public class ProductListItem {
 
     public String getItemCategory() {
         return Category;
+    }
+
+    public String getItemImageUrl() {   //on the roadmap
+        return itemImageUrl;
     }
 }

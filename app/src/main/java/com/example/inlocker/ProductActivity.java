@@ -3,7 +3,9 @@ package com.example.inlocker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -12,14 +14,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 
 public class ProductActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private DocumentReference storeDocumentRef;
     private CollectionReference productListRef;
     private ProductListItemAdapter adapter;
 
@@ -27,6 +35,8 @@ public class ProductActivity extends AppCompatActivity {
     String[] categories;
     ImageButton cart;
     String storeDocumentID;
+    ImageView storeImageView;
+    Button[] categoryBtns;
 
     private static final String TAG = "ProductActivity";
 
@@ -36,14 +46,21 @@ public class ProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_products);
         storeName = findViewById(R.id.storeName);
         cart = findViewById(R.id.cartBtn);
-        categories = getResources().getStringArray(R.array.categories);
+        //categories = getResources().getStringArray(R.array.categories);
+        storeImageView = findViewById(R.id.storeImage);
 
-        String received_storeName = getIntent().getStringExtra("chosenStoreName");
-        storeName.setText(received_storeName);
+        categoryBtns = new Button[5];
+        categoryBtns[0] = findViewById(R.id.category1_productBtn);
+        categoryBtns[1] = findViewById(R.id.category2_productBtn);
+        categoryBtns[2] = findViewById(R.id.category3_productBtn);
+        categoryBtns[3] = findViewById(R.id.category4_productBtn);
+        categoryBtns[4] = findViewById(R.id.category5_productBtn);
 
         storeDocumentID = getIntent().getStringExtra("documentID");
-        productListRef = db.collection("storeList").document(storeDocumentID).collection("Products");
+        storeDocumentRef = db.collection("storeList").document(storeDocumentID);
+        productListRef = storeDocumentRef.collection("Products");
 
+        setStoreInfo();
         setUpRecyclerView();
 
         cart.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +71,33 @@ public class ProductActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void setStoreInfo() {
+        storeDocumentRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                storeName.setText(documentSnapshot.getString("Name"));
+                if (documentSnapshot.getString("storeImageLink") != null) {
+                    Picasso.get().load(documentSnapshot.getString("storeImageLink")).into(storeImageView);
+                } else {
+                    storeImageView.setImageResource(R.drawable.store_demo);
+                }
+
+                if (documentSnapshot.get("categories") != null) {
+                    ArrayList results = (ArrayList) documentSnapshot.get("categories");
+                    for (int ix = 0; ix < categoryBtns.length; ix++) {
+                        categoryBtns[ix].setText(results.get(ix).toString());
+                    }
+                } else {
+                    for (Button categoryBtn : categoryBtns) {
+                        categoryBtn.setText("null");
+                    }
+                }
+            }
+        });
+
+    }
+
 
     private void setUpRecyclerView() {
         FirestoreRecyclerOptions<ProductListItem> options = new FirestoreRecyclerOptions.Builder<ProductListItem>()
