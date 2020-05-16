@@ -87,7 +87,7 @@ public class shopperinfo extends AppCompatActivity implements View.OnClickListen
     // if (isValidSignUpCred(Name, Surname, PhoneNumber)) {
     //Firebase related functions
     private void saveItem() {
-        String Name = this.Name.getText().toString().trim(); //this.Name -> NameEditText if not working
+        String Name = this.Name.getText().toString().trim();
         String Surname = this.Surname.getText().toString().trim();
         String PhoneNumber = this.PhoneNumber.getText().toString().trim();
         String Address = this.Address.getText().toString().trim();
@@ -95,7 +95,7 @@ public class shopperinfo extends AppCompatActivity implements View.OnClickListen
 
         //validation
         if (Name.trim().isEmpty() || Surname.trim().isEmpty() || Address.trim().isEmpty() || PhoneNumber.trim().isEmpty()) {
-            Toast.makeText(this, "Please enter a valid name, price, amount and category", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter a valid name, Surname, Phone Number and Address", Toast.LENGTH_SHORT).show();
             return;
         }
 
