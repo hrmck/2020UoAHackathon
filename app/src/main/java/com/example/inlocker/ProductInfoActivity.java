@@ -107,9 +107,6 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
                 addToCartDatabase(order);
                 //dont forget the loop fro create new doc vs update existing doc
                 //add to cart
-                Intent goToCart = new Intent(ProductInfoActivity.this, CartActivity.class);
-                goToCart.putExtra(placeHolder1, cartProdPrice);
-                startActivity(goToCart);
                 break;
         }
     }
