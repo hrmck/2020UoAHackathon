@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     Spinner spinner;
     Button confirm;
     String currentDate;
-    TextView Date, setTime;
+    EditText Date, setTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +30,8 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         Date currentTime = Calendar.getInstance().getTime();*/
         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
 
-        setTime = (TextView) findViewById(R.id.setTimeEditText);
-        setTime.setText(currentDateTimeString);
-        // Date = (TextView) findViewById(R.id.DateTextView);
+        setTime = (EditText) findViewById(R.id.pickUpTimeEditText);
+        Date = (EditText) findViewById(R.id.pickUpDateEditText);
 
         //Date.setText(currentDate);
 

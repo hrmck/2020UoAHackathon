@@ -103,7 +103,7 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.add_to_cartBtn:
                 // String order = "Date:" +currentDate+ " Product Name: " +cartProdName + " Amount: " +cartProdAmount + " Total Price " +cartProdPrice + "Yen";
-                String order = currentDate + " " + cartProdName + " * " + cartProdAmount + " Total Price " + cartProdPrice + "Yen";
+                String order = cartProdName + " * " + cartProdAmount;
                 addToCartDatabase(order);
                 //dont forget the loop fro create new doc vs update existing doc
                 //add to cart
