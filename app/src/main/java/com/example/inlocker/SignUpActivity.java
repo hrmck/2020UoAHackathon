@@ -65,7 +65,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             progressBar.setVisibility(View.GONE);
                             if (task.isSuccessful()) {
-                                Intent toMain = new Intent(SignUpActivity.this, shopperinfo.class);
+                                Intent toMain = new Intent(SignUpActivity.this, ShopperInfoActivity.class);
                                 //toMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(toMain);
                             } else {

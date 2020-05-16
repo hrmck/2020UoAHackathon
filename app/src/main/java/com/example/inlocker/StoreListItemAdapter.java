@@ -3,6 +3,7 @@ package com.example.inlocker;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,9 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.squareup.picasso.Picasso;
 
 public class StoreListItemAdapter extends FirestoreRecyclerAdapter<StoreListItem, StoreListItemAdapter.StoreListItemHolder> {
     private OnItemClickListener listener;
+    FirebaseStorage fStorage = FirebaseStorage.getInstance();
+
 
     /**
      * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
@@ -28,6 +33,7 @@ public class StoreListItemAdapter extends FirestoreRecyclerAdapter<StoreListItem
     @Override
     protected void onBindViewHolder(@NonNull StoreListItemHolder holder, int position, @NonNull StoreListItem model) {
         holder.textViewStoreName.setText(model.getName());
+        Picasso.get().load(model.getLogoImageLink()).into(holder.imageViewStoreLogo);
     }
 
     @NonNull
@@ -40,10 +46,12 @@ public class StoreListItemAdapter extends FirestoreRecyclerAdapter<StoreListItem
     class StoreListItemHolder extends RecyclerView.ViewHolder {
 
         TextView textViewStoreName;
+        ImageView imageViewStoreLogo;
 
         public StoreListItemHolder(@NonNull View itemView) {
             super(itemView);
             textViewStoreName = itemView.findViewById(R.id.store_name);
+            imageViewStoreLogo = itemView.findViewById(R.id.store_image);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
