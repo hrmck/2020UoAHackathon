@@ -58,7 +58,7 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         TAG = getApplicationContext().toString();
         user = fAuth.getCurrentUser();
         uid = user.getUid();
-        collectionProduct = fStore.collection("purchaseHistory").document(uid);
+        collectionProduct = fStore.collection("buyerList").document(uid);
 
         String productItemID = getIntent().getStringExtra("productItemDocumentID");
         String storeID = getIntent().getStringExtra("storeDocumentID");
@@ -153,7 +153,7 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         Map<String, Object> item = new HashMap<>();
         item.put("Order", order);
 
-        collectionProduct.set(item).addOnSuccessListener(new OnSuccessListener<Void>() {
+        collectionProduct.update(item).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(getApplicationContext(), "Info saved", Toast.LENGTH_SHORT).show();

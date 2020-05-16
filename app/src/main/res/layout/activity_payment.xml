@@ -6,46 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".PaymentActivity">
 
-    <EditText
-        android:id="@+id/date_confirm_editText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/date"
-        android:inputType="date"
-        app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
-        app:layout_constraintTop_toTopOf="@+id/horizontal1_confirm_guideline" />
-
-    <EditText
-        android:id="@+id/time_confirm_editText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/time"
-        android:inputType="time"
-        app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/date_confirm_editText" />
-
     <Spinner
         android:id="@+id/paymentType_confirm_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="#DDCBCB"
         app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/time_confirm_editText" />
+        app:layout_constraintTop_toBottomOf="@+id/setTimeEditText" />
 
     <EditText
         android:id="@+id/remarks_confirm_editText"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
+        android:background="#DDCBCB"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/remarks"
@@ -61,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:backgroundTint="#DDCBCB"
         android:text="@string/confirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -87,5 +65,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.85" />
+
+    <TextView
+        android:id="@+id/setTimeEditText"
+        android:layout_width="286dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="240dp"
+        android:background="#DDCBCB"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

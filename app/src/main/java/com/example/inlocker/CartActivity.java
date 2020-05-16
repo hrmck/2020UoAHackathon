@@ -19,7 +19,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+
 public class CartActivity extends AppCompatActivity implements View.OnClickListener {
+
     Button toPayment;
     FirebaseAuth fAuth = FirebaseAuth.getInstance();
     FirebaseFirestore fStore = FirebaseFirestore.getInstance();
@@ -29,8 +31,8 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     private static String TAG;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private DocumentReference documentReference;
-    TextView cartProductInfo = (TextView) findViewById(R.id.cartProductName);
-    TextView cartProductTotal = (TextView) findViewById(R.id.cartProductTotal);
+    TextView cartProductInfo;
+    TextView cartProductTotal;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,9 +44,10 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         user = fAuth.getCurrentUser();
         uid = user.getUid();
         //collectionProduct = fStore.collection("purchaseHistory").document(uid);
-        documentReference = db.collection("purchaseHistory").document(uid);
+        documentReference = db.collection("buyerList").document(uid);
 
-
+        cartProductInfo = (TextView) findViewById(R.id.cartProductName);
+        cartProductTotal = (TextView) findViewById(R.id.cartProductTotal);
         Intent intent = getIntent();
         int price = intent.getIntExtra(ProductInfoActivity.placeHolder1, 0);
         /*String name = intent.getStringExtra(ProductInfoActivity.cartProdName);
@@ -59,7 +62,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         cartProductAmount.setText("Amount: " + amount);*/
         cartProductTotal.setText("Total " + price + "Yen");
 
-        //fetchProductInfo();
+        fetchProductInfo();
 
         toPayment = findViewById(R.id.toPaymentBtn);
 

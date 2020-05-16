@@ -75,21 +75,24 @@
         android:backgroundTint="@color/bone"
         app:layout_constraintBottom_toTopOf="@+id/horizontal2_cart_guideline"
         app:layout_constraintEnd_toStartOf="@+id/vertical2_cart_guideline"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/vertical1_cart_guideline"
         app:layout_constraintTop_toTopOf="@+id/horizontal1_cart_guideline"
+        app:layout_constraintVertical_bias="1.0"
         tools:itemCount="0" />
 
     <TextView
         android:id="@+id/cartProductName"
-        android:layout_width="281dp"
-        android:layout_height="419dp"
+        android:layout_width="213dp"
+        android:layout_height="377dp"
         android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/horizontal2_cart_guideline"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.719" />
+        app:layout_constraintVertical_bias="0.665" />
 
     <TextView
         android:id="@+id/cartProductTotal"
