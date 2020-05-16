@@ -10,8 +10,8 @@
         android:id="@+id/paymentType_confirm_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#DDCBCB"
+        android:layout_marginTop="32dp"
+        android:background="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
@@ -19,17 +19,18 @@
 
     <EditText
         android:id="@+id/remarks_confirm_editText"
+        style="@style/customEditText"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
-        android:background="@android:color/white"
+        android:background="@drawable/layout_rounded_edittext"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/remarks"
         android:inputType="textMultiLine"
         android:singleLine="false"
         app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
         app:layout_constraintTop_toBottomOf="@+id/paymentType_confirm_spinner" />
 
@@ -49,6 +50,7 @@
         android:id="@+id/horizontal1_confirm_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/layout_rounded_edittext"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
@@ -68,30 +70,29 @@
 
     <EditText
         android:id="@+id/pickUpTimeEditText"
-        android:layout_width="284dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="28dp"
-        android:background="#DDCBCB"
+        style="@style/customEditText"
+        android:layout_width="0dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/layout_rounded_edittext"
         android:ems="10"
         android:hint="Pick Up Time"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
         app:layout_constraintHorizontal_bias="0.519"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
         app:layout_constraintTop_toBottomOf="@+id/pickUpDateEditText" />
 
     <EditText
         android:id="@+id/pickUpDateEditText"
-        android:layout_width="284dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="224dp"
-        android:background="#DDCBCB"
+        style="@style/customEditText"
+        android:layout_width="0dp"
+        android:background="@drawable/layout_rounded_edittext"
         android:ems="10"
         android:hint="Pick Up Date"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.519"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/vertical2_confrim_guideline"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/vertical1_confirm_guideline"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1_confirm_guideline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
